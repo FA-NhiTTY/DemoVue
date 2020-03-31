@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
     <b-navbar toggleable="lg" type="dark" variant="info">
       <router-link class="navbar-brand" to="/">Home</router-link>
 
@@ -21,7 +17,7 @@
             <li class="nav-item">
               <span class="nav-link">
                 <router-link class="text-white" to="/Cart">
-                  Cart
+                  Cart <a-icon type="shopping-cart" />
                   <span class="badge badge-light"> {{countCart}} </span>
                 </router-link>
               </span>

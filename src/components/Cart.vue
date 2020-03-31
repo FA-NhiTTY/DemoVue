@@ -47,10 +47,10 @@
           </table>
 
           <div class="text-right my-3">
-            <button class="btn btn-dark" @click="removeAllCart">Xóa giỏ hàng</button>
+            <button class="btn btn-light" v-show="cart.lenght > 0" @click="removeAllCart">Xóa giỏ hàng</button>
           </div>
           <div class="text-right">
-            <router-link class="btn btn-primary text-white" to="/Confirm">Đặt hàng</router-link>
+            <router-link class="btn btn-primary text-white" to="/Confirm" v-show="cart.lenght > 0">Đặt hàng</router-link>
           </div>
         </div>
       </div>

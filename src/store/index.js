@@ -11,7 +11,7 @@ export default new Vuex.Store({
       'abc.com',
       'qwerty.com'
     ],
-    cart: [],
+    cart: !_.isNull(localStorage.getItem('cart'))? JSON.parse(localStorage.getItem('cart')) : [],
     listProducts: products
   },
   getters: {
@@ -52,14 +52,17 @@ export default new Vuex.Store({
 
     ADD_CART: (state, product) => {
       state.cart.push(product)
+      localStorage.setItem('cart', JSON.stringify(state.cart))
     },
 
     REMOVE_PRODUCT: (state, product) => {
       state.cart.splice(product, 1)
+      localStorage.setItem('cart', JSON.stringify(state.cart))
     },
 
     REMOVE_CART: (state) => {
-      state.cart = []
+      state.cart = []      
+      localStorage.removeItem('cart')
     }
   },
   // dành cho các sự kiện bất đồng bộ

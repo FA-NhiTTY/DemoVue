@@ -3,18 +3,26 @@
     <p v-if="listProducts.length">Tổng số: {{listProducts.length}} sản phẩm</p>
     <div class="row my-5">
       <div class="col-sm-3" v-for="product in listProducts" :key="product.id">
-        <div class="card">
+        <a-card hoverable style="width: 240px">
           <img
             :src="product.imgLink"
             class="card-img-top"
             :alt="product.name"
             style="max-height: 100%; max-width: 100%;"
+            slot="cover"
           />
-          <div class="card-body">
-            <h5 @click="goTodetail(product.id)" class="card-title">{{product.name}}</h5>
-            <button class="btn btn-light" @click="addToCart(product)">Add to cart</button>
+          <div class="ant-card-meta">
+            <div class="ant-card-meta-detail">
+              <div class="ant-card-meta-detail">
+                <div class="ant-card-meta-title" style="white-space: normal;"> {{product.name}} </div>
+                <div class="ant-card-meta-description">
+                  <p>{{product.price}}</p>
+                  <button class="btn btn-light" @click="addToCart(product)">Add to cart</button>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </a-card>
       </div>
     </div>
   </div>
@@ -43,7 +51,7 @@ export default {
     addToCart(pro) {
       // if (_.isEmpty(cartProId) || !_.includes(this.cartProId, proId)) {
       this.ADD_CART(pro);
-      alert("Add cart successful.");
+      alert("Thêm vào giỏ hàng thành công.");
       // }
     }
   }
@@ -52,6 +60,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.ant-card-meta-title {
+  white-space: normal !important;
+}
+
 h3 {
   margin: 40px 0 0;
 }
