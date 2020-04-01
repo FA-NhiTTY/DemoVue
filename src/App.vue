@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <b-navbar toggleable="lg" type="dark" variant="info">
-      <router-link class="navbar-brand" to="/">Home</router-link>
+      <router-link class="navbar-brand" to="/">Trang chủ</router-link>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -10,14 +10,14 @@
           <ul class="nav">
             <li class="nav-item">
               <span class="nav-link">
-                <router-link class="text-white" to="/ListProducts">List Products</router-link>
+                <router-link class="text-white" to="/ListProducts">Sản phẩm</router-link>
               </span>
             </li>
 
             <li class="nav-item">
               <span class="nav-link">
                 <router-link class="text-white" to="/Cart">
-                  Cart <a-icon type="shopping-cart" />
+                  Giỏ hàng <a-icon type="shopping-cart" />
                   <span class="badge badge-light"> {{countCart}} </span>
                 </router-link>
               </span>

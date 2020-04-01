@@ -25,8 +25,8 @@
                 <td>{{product.price*(100 - product.discount)/100}}</td>
                 <td>1</td>
                 <td>{{product.price*(100 - product.discount)/100}}</td>
-                <td>
-                  <button @click="removeProducts(index)">Xóa</button>
+                <td class="text-right">
+                  <button class="btn btn-light" @click="removeProducts(index)">Xóa</button>
                 </td>
               </tr>
             </tbody>
@@ -42,15 +42,15 @@
                 <td>
                   <p class="font-700">{{countTotalCart}}</p>
                 </td>
+                <td class="text-right">
+                  <button class="btn btn-light" v-show="cart.length > 0" @click="removeAllCart">Xóa giỏ hàng</button>
+                </td>
               </tr>
             </tfoot>
           </table>
 
-          <div class="text-right my-3">
-            <button class="btn btn-light" v-show="cart.lenght > 0" @click="removeAllCart">Xóa giỏ hàng</button>
-          </div>
           <div class="text-right">
-            <router-link class="btn btn-primary text-white" to="/Confirm" v-show="cart.lenght > 0">Đặt hàng</router-link>
+            <router-link class="btn btn-primary text-white" to="/Confirm" v-show="cart.length > 0">Đặt hàng</router-link>
           </div>
         </div>
       </div>

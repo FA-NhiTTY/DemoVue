@@ -33,7 +33,7 @@
 
           <div class="import-cart text-left">
             <button class="btn btn-light" @click="addToCart()">
-              Add to cart
+              Thêm vào giỏ hàng
               <i class="fas fa-shopping-cart"></i>
             </button>
           </div>

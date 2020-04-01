@@ -17,7 +17,7 @@
                 <div class="ant-card-meta-title" style="white-space: normal;"> {{product.name}} </div>
                 <div class="ant-card-meta-description">
                   <p>{{product.price}}</p>
-                  <button class="btn btn-light" @click="addToCart(product)">Add to cart</button>
+                  <button class="btn btn-light" @click="addToCart(product)">Thêm vào giỏ hàng</button>
                 </div>
               </div>
             </div>
